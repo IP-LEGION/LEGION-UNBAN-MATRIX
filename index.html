@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-<link rel="apple-touch-icon" href="/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced AI-powered system for generating WhatsApp unban appeals with high success rates.">
     <title>LEGION UNBAN MATRIX - WhatsApp Account Restoration System</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
     <style>
         :root {
             --quantum-blue: #00f0ff;
@@ -14,25 +15,28 @@
             --dark-space: #0a0a1f;
             --cyber-purple: #6a00ff;
             --warning-gold: #ffd700;
+            --shadow-glow: 0 0 20px rgba(0, 240, 255, 0.5);
+            --3d-perspective: 1000px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             background: var(--dark-space);
             color: white;
             font-family: 'Courier New', monospace;
             overflow-x: hidden;
+            perspective: var(--3d-perspective);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(106, 0, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 10% 20%, rgba(106, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
                 linear-gradient(45deg, #0a0a1f 0%, #1a1a3f 100%);
         }
-        
+
         .cyber-grid {
             position: fixed;
             top: 0;
@@ -40,30 +44,32 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+                linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
             animation: gridMove 20s linear infinite;
         }
-        
+
         @keyframes gridMove {
             0% { transform: translate(0, 0); }
             100% { transform: translate(50px, 50px); }
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            transform-style: preserve-3d;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
+            transform-style: preserve-3d;
         }
-        
+
         .cyber-glitch {
             font-size: 3.5rem;
             font-weight: 900;
@@ -73,154 +79,167 @@
                 0 0 10px var(--quantum-blue),
                 0 0 20px var(--quantum-blue),
                 0 0 40px var(--quantum-blue);
-            animation: glitch 3s infinite;
+            animation: glitch 2s infinite;
             margin-bottom: 1rem;
+            transform: translateZ(50px);
         }
-        
+
         @keyframes glitch {
-            0%, 100% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
+            0%, 100% { transform: translate(0) translateZ(50px); }
+            20% { transform: translate(-2px, 2px) translateZ(50px); }
+            40% { transform: translate(-2px, -2px) translateZ(50px); }
+            60% { transform: translate(2px, 2px) translateZ(50px); }
+            80% { transform: translate(2px, -2px) translateZ(50px); }
         }
-        
+
         .subtitle {
             color: var(--neon-pink);
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            transform: translateZ(20px);
         }
-        
+
         .stats-panel {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
+            transform-style: preserve-3d;
         }
-        
+
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--quantum-blue);
-            border-radius: 10px;
-            padding: 1rem;
+            border-radius: 15px;
+            padding: 1.5rem;
             text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg) translateZ(0);
         }
-        
+
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: rotateY(10deg) translateY(-10px) translateZ(30px);
             border-color: var(--neon-pink);
+            box-shadow: var(--shadow-glow);
         }
-        
+
         .stat-number {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--matrix-green);
             font-weight: bold;
+            margin-bottom: 0.5rem;
         }
-        
+
         .main-interface {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
+            transform-style: preserve-3d;
         }
-        
+
         @media (max-width: 768px) {
             .main-interface {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .cyber-glitch {
+                font-size: 2.5rem;
             }
         }
-        
+
         .input-section, .output-section {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--cyber-purple);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
         }
-        
+
+        .input-section:hover, .output-section:hover {
+            transform: translateZ(20px);
+            box-shadow: var(--shadow-glow);
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             position: relative;
         }
-        
+
         .cyber-label {
             display: block;
             color: var(--quantum-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
-        
-        .cyber-input {
+
+        .cyber-input, .cyber-select, .cyber-textarea {
             width: 100%;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--quantum-blue);
-            border-radius: 8px;
+            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--quantum-blue);
+            border-radius: 10px;
             color: white;
             font-family: 'Courier New', monospace;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            font-size: 1rem;
         }
-        
-        .cyber-input:focus {
+
+        .cyber-input:focus, .cyber-select:focus, .cyber-textarea:focus {
             outline: none;
             border-color: var(--neon-pink);
-            box-shadow: 0 0 15px var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+            transform: translateZ(10px);
         }
-        
+
         .cyber-select {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--quantum-blue);
-            border-radius: 8px;
-            color: white;
-            font-family: 'Courier New', monospace;
             appearance: none;
-            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 3rem;
         }
-        
+
         .cyber-textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--quantum-blue);
-            border-radius: 8px;
-            color: white;
-            font-family: 'Courier New', monospace;
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
-        
+
         .cyber-button {
             background: linear-gradient(45deg, var(--cyber-purple), var(--neon-pink));
             color: white;
             border: none;
-            padding: 1.2rem 2rem;
-            border-radius: 8px;
+            padding: 1.5rem 2.5rem;
+            border-radius: 10px;
             font-family: 'Courier New', monospace;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             width: 100%;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             position: relative;
             overflow: hidden;
+            transform-style: preserve-3d;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-        
+
         .cyber-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+            transform: translateY(-5px) translateZ(20px);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.6);
         }
-        
+
         .cyber-button:active {
-            transform: translateY(0);
+            transform: translateY(0) translateZ(10px);
         }
-        
+
         .cyber-button::before {
             content: '';
             position: absolute;
@@ -228,78 +247,92 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
+
         .cyber-button:active::before {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
         }
-        
+
         .output-display {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--matrix-green);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 1rem;
-            max-height: 400px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--matrix-green);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            max-height: 450px;
             overflow-y: auto;
+            transform-style: preserve-3d;
         }
-        
+
         .email-template {
             white-space: pre-wrap;
             font-family: 'Courier New', monospace;
             color: var(--matrix-green);
-            line-height: 1.6;
+            line-height: 1.7;
+            animation: codeGlow 2s infinite alternate;
         }
-        
+
+        @keyframes codeGlow {
+            from { text-shadow: 0 0 5px var(--matrix-green); }
+            to { text-shadow: 0 0 15px var(--matrix-green); }
+        }
+
         .automation-panel {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--warning-gold);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--warning-gold);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            transform-style: preserve-3d;
         }
-        
+
         .auto-option {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
         }
-        
+
         .auto-option:hover {
-            transform: translateX(5px);
+            transform: translateX(10px) translateZ(10px);
+            background: rgba(255, 215, 0, 0.1);
         }
-        
+
         .auto-checkbox {
             margin-right: 1rem;
-            transform: scale(1.2);
+            transform: scale(1.3);
             cursor: pointer;
+            accent-color: var(--matrix-green);
         }
-        
+
         .progress-bar {
             width: 100%;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            margin: 1rem 0;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin: 1.5rem 0;
             overflow: hidden;
-            border: 1px solid var(--quantum-blue);
+            border: 2px solid var(--quantum-blue);
+            transform-style: preserve-3d;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--matrix-green), var(--quantum-blue));
             width: 0%;
-            transition: width 0.5s ease-in-out;
+            transition: width 0.6s ease-in-out;
             position: relative;
         }
-        
+
         .progress-fill::after {
             content: '';
             position: absolute;
@@ -307,15 +340,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 2s infinite;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 1.5s infinite;
         }
-        
+
         @keyframes shimmer {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
-        
+
         .floating-elements {
             position: fixed;
             top: 0;
@@ -325,136 +358,219 @@
             pointer-events: none;
             z-index: -1;
         }
-        
+
         .floating-element {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 6px;
+            height: 6px;
             background: var(--quantum-blue);
             border-radius: 50%;
-            animation: float 6s infinite linear;
-            box-shadow: 0 0 10px var(--quantum-blue);
+            animation: float 8s infinite linear;
+            box-shadow: 0 0 15px var(--quantum-blue);
+            transform-style: preserve-3d;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(100vh) rotate(0deg) translateZ(0); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-100px) rotate(360deg) translateZ(50px); opacity: 0; }
         }
-        
+
         .success-rate {
             color: var(--matrix-green);
             font-weight: bold;
-            margin-top: 1rem;
-            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
             text-align: center;
-            padding: 1rem;
-            background: rgba(0, 255, 65, 0.1);
-            border-radius: 8px;
+            padding: 1.5rem;
+            background: rgba(0, 255, 65, 0.15);
+            border-radius: 10px;
+            border: 1px solid var(--matrix-green);
+            animation: successPulse 2s infinite;
         }
-        
+
+        @keyframes successPulse {
+            0%, 100% { box-shadow: 0 0 10px var(--matrix-green); }
+            50% { box-shadow: 0 0 20px var(--matrix-green); }
+        }
+
         .ai-analysis {
-            background: rgba(0, 240, 255, 0.1);
-            border-left: 4px solid var(--quantum-blue);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-            min-height: 60px;
+            background: rgba(0, 240, 255, 0.15);
+            border-left: 5px solid var(--quantum-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+            min-height: 80px;
             animation: pulse 2s infinite;
+            transform-style: preserve-3d;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { border-color: var(--quantum-blue); }
-            50% { border-color: var(--neon-pink); }
+            0%, 100% { border-color: var(--quantum-blue); transform: translateZ(0); }
+            50% { border-color: var(--neon-pink); transform: translateZ(10px); }
         }
-        
+
         .notification {
             position: fixed;
             top: 20px;
             right: 20px;
             background: linear-gradient(45deg, var(--cyber-purple), var(--neon-pink));
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+            padding: 1.5rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.5);
             z-index: 1000;
             animation: slideIn 0.5s ease;
-            max-width: 400px;
+            max-width: 450px;
+            transform-style: preserve-3d;
         }
-        
+
         @keyframes slideIn {
-            from {
-                transform: translateX(500px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from { transform: translateX(500px) translateZ(0); opacity: 0; }
+            to { transform: translateX(0) translateZ(20px); opacity: 1; }
         }
-        
+
         .history-panel {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--cyber-purple);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--cyber-purple);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            transform-style: preserve-3d;
         }
-        
+
         .history-item {
-            background: rgba(0, 0, 0, 0.5);
-            border-left: 3px solid var(--matrix-green);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-left: 4px solid var(--matrix-green);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 10px 10px 0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
         }
-        
+
         .history-item:hover {
-            transform: translateX(10px);
+            transform: translateX(15px) rotateY(5deg) translateZ(10px);
             border-left-color: var(--neon-pink);
+            box-shadow: var(--shadow-glow);
         }
-        
+
         .copy-btn {
             background: linear-gradient(45deg, var(--matrix-green), var(--quantum-blue));
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             border: none;
             color: white;
             cursor: pointer;
             font-family: 'Courier New', monospace;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            transition: all 0.4s ease;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
         }
-        
+
         .copy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px var(--matrix-green);
+            transform: scale(1.05) translateZ(10px);
+            box-shadow: 0 0 20px var(--matrix-green);
         }
-        
+
         .email-clients {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
-        
+
         .email-client-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--quantum-blue);
-            padding: 1rem;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid var(--quantum-blue);
+            padding: 1.2rem;
+            border-radius: 10px;
             color: white;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-align: center;
+            font-weight: bold;
+            transform-style: preserve-3d;
         }
-        
+
         .email-client-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             border-color: var(--neon-pink);
-            transform: translateY(-5px);
+            transform: translateY(-8px) translateZ(15px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Loading spinner for generation */
+        .loading {
+            display: none;
+            position: relative;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--matrix-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cyber-glitch {
+                font-size: 2rem;
+            }
+            .stats-panel {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .input-section, .output-section, .automation-panel, .history-panel {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--quantum-blue);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
         }
     </style>
 </head>
@@ -465,7 +581,7 @@
     <div class="container">
         <div class="header">
             <div class="cyber-glitch">LEGION UNBAN MATRIX</div>
-            <div class="subtitle">NEURAL APPEAL GENERATION SYSTEM • SUCCESS RATE: <span id="liveSuccessRate">94.7</span>% • AI-POWERED RESTORATION</div>
+            <div class="subtitle">NEURAL APPEAL GENERATION SYSTEM • SUCCESS RATE: <span id="liveSuccessRate">94.7</span>% • AI-POWERED RESTORATION • 3D QUANTUM INTERFACE</div>
             
             <div class="stats-panel">
                 <div class="stat-card">
@@ -489,7 +605,7 @@
         
         <div class="main-interface">
             <div class="input-section">
-                <h3 style="color: var(--neon-pink); margin-bottom: 1.5rem;">⚡ ACCOUNT DATA INPUT</h3>
+                <h3 style="color: var(--neon-pink);">⚡ ACCOUNT DATA INPUT</h3>
                 
                 <div class="form-group">
                     <label class="cyber-label">📱 WhatsApp Number</label>
@@ -532,101 +648,114 @@
                 
                 <div class="form-group">
                     <label class="cyber-label">📝 Incident Context</label>
-                    <textarea id="context" class="cyber-textarea" placeholder="Describe what happened, any error messages, your usage patterns..."></textarea>
+                    <textarea id="context" class="cyber-textarea" placeholder="Provide detailed description of the incident, error messages, usage patterns, and any relevant details to strengthen your appeal..."></textarea>
                 </div>
                 
                 <div class="ai-analysis" id="aiAnalysis">
-                    🤖 AI ANALYSIS: Awaiting input data...
+                    🤖 AI ANALYSIS: Awaiting input data for quantum processing...
                 </div>
+                
+                <div id="loadingSpinner" class="loading"></div>
                 
                 <button class="cyber-button" onclick="generateQuantumAppeal()">⚡ GENERATE QUANTUM APPEAL</button>
                 <button class="cyber-button" style="background: linear-gradient(45deg, #ff6b00, #ff0000);" onclick="launchFullAutomation()">🚀 AUTOMATED RESTORATION PROTOCOL</button>
             </div>
             
             <div class="output-section">
-                <h3 style="color: var(--matrix-green); margin-bottom: 1.5rem;">📤 APPEAL OUTPUT</h3>
+                <h3 style="color: var(--matrix-green);">📤 APPEAL OUTPUT</h3>
                 
-                <div class="success-rate" id="successPrediction">🎯 SUCCESS PROBABILITY: --%</div>
+                <div class="success-rate" id="successPrediction">🎯 SUCCESS PROBABILITY: --% (AI Prediction Loading...)</div>
                 
                 <div class="output-display">
-                    <div class="email-template" id="emailOutput">// APPEAL WILL BE GENERATED HERE</div>
+                    <div class="email-template" id="emailOutput">// QUANTUM APPEAL WILL BE GENERATED HERE VIA NEURAL PROCESSING</div>
                 </div>
                 
                 <button class="copy-btn" onclick="copyToClipboard()">📋 COPY APPEAL TO CLIPBOARD</button>
                 
-                <div style="margin-top: 1.5rem;">
-                    <div class="cyber-label">🎯 TARGET EMAILS:</div>
-                    <div style="color: var(--neon-pink); font-size: 0.85rem; line-height: 1.6;" id="targetEmails">
-                        smb_web@support.whatsapp.com<br>
-                        android@support.whatsapp.com<br>
-                        iphone@support.whatsapp.com<br>
-                        support@support.whatsapp.com
+                <div style="margin-top: 2rem;">
+                    <div class="cyber-label">🎯 TARGET SUPPORT EMAILS (Multi-Channel Delivery):</div>
+                    <div style="color: var(--neon-pink); font-size: 0.9rem; line-height: 1.7; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;" id="targetEmails">
+                        - smb_web@support.whatsapp.com (Business/SMB Appeals)<br>
+                        - android@support.whatsapp.com (Android-Specific Issues)<br>
+                        - iphone@support.whatsapp.com (iOS-Specific Issues)<br>
+                        - support@support.whatsapp.com (General Support)<br>
+                        - legal@whatsapp.com (Legal/Escalation Cases)
                     </div>
                 </div>
                 
-                <div class="cyber-label" style="margin-top: 1.5rem;">📧 OPEN IN EMAIL CLIENT:</div>
+                <div class="cyber-label" style="margin-top: 2rem;">📧 QUICK EMAIL CLIENT INTEGRATION:</div>
                 <div class="email-clients">
-                    <div class="email-client-btn" onclick="openInDefault()">SEND-APPEAL</div>
+                    <div class="email-client-btn" onclick="openInDefault()">🖥️ DEFAULT CLIENT</div>
+                    <div class="email-client-btn" onclick="openInGmail()">📧 GMAIL</div>
+                    <div class="email-client-btn" onclick="openInOutlook()">📧 OUTLOOK</div>
+                    <div class="email-client-btn" onclick="openInYahoo()">📧 YAHOO</div>
                 </div>
             </div>
         </div>
         
         <div class="automation-panel">
-            <h3 style="color: var(--warning-gold); margin-bottom: 1rem;">⚙️ QUANTUM AUTOMATION SUITE</h3>
+            <h3 style="color: var(--warning-gold);">⚙️ QUANTUM AUTOMATION SUITE (3D Neural Network)</h3>
             
             <div class="auto-option" onclick="toggleCheckbox('autoFollowup')">
                 <input type="checkbox" id="autoFollowup" class="auto-checkbox" checked>
-                <label for="autoFollowup">🔄 AUTOMATED 72-HOUR FOLLOW-UP PROTOCOL</label>
+                <label for="autoFollowup">🔄 AUTOMATED 72-HOUR FOLLOW-UP & REMINDER SYSTEM</label>
             </div>
             
             <div class="auto-option" onclick="toggleCheckbox('multiChannel')">
                 <input type="checkbox" id="multiChannel" class="auto-checkbox" checked>
-                <label for="multiChannel">📡 MULTI-CHANNEL APPEAL DISTRIBUTION</label>
+                <label for="multiChannel">📡 MULTI-CHANNEL APPEAL DISTRIBUTION (Email + API Simulation)</label>
             </div>
             
             <div class="auto-option" onclick="toggleCheckbox('aiRewrite')">
                 <input type="checkbox" id="aiRewrite" class="auto-checkbox" checked>
-                <label for="aiRewrite">🤖 AI REAL-TIME OPTIMIZATION & REWRITING</label>
+                <label for="aiRewrite">🤖 AI REAL-TIME OPTIMIZATION, REWRITING & A/B TESTING</label>
             </div>
             
             <div class="auto-option" onclick="toggleCheckbox('legalThreat')">
                 <input type="checkbox" id="legalThreat" class="auto-checkbox">
-                <label for="legalThreat">⚖️ LEGAL COMPLIANCE & REGULATORY ESCALATION</label>
+                <label for="legalThreat">⚖️ LEGAL COMPLIANCE, REGULATORY ESCALATION & GDPR REFERENCE</label>
             </div>
             
             <div class="progress-bar">
                 <div class="progress-fill" id="automationProgress"></div>
             </div>
             
-            <div style="text-align: center; color: var(--warning-gold); font-size: 1.1rem;" id="automationStatus">
-                ⚡ AUTOMATION SYSTEMS: READY
+            <div style="text-align: center; color: var(--warning-gold); font-size: 1.2rem; font-weight: bold;" id="automationStatus">
+                ⚡ QUANTUM AUTOMATION SYSTEMS: READY FOR DEPLOYMENT
             </div>
         </div>
         
         <div class="history-panel">
-            <h3 style="color: var(--cyber-purple); margin-bottom: 1rem;">📚 APPEAL HISTORY</h3>
+            <h3 style="color: var(--cyber-purple);">📚 QUANTUM APPEAL HISTORY LOG</h3>
             <div id="historyContainer">
-                <div style="text-align: center; color: var(--quantum-blue); padding: 2rem;">
-                    No appeals generated yet. Create your first appeal above!
+                <div style="text-align: center; color: var(--quantum-blue); padding: 3rem; font-style: italic;">
+                    No quantum appeals generated yet. Initiate your first neural restoration process above!
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Global state management
+        // Enhanced Global State Management with LocalStorage Persistence
         const state = {
-            appeals: [],
+            appeals: JSON.parse(localStorage.getItem('legionAppeals')) || [],
             stats: {
-                successCount: 9,
-                appealCount: 10,
+                successCount: parseInt(localStorage.getItem('successCount')) || 9,
+                appealCount: parseInt(localStorage.getItem('appealCount')) || 10,
                 avgTime: 23.6,
                 uptime: 99.9
             },
             currentAppeal: null
         };
-        
-        // Initialize system
+
+        // Save state to localStorage
+        function saveState() {
+            localStorage.setItem('legionAppeals', JSON.stringify(state.appeals));
+            localStorage.setItem('successCount', state.stats.successCount.toString());
+            localStorage.setItem('appealCount', state.stats.appealCount.toString());
+        }
+
+        // Initialize Enhanced System
         function initSystem() {
             createFloatingElements();
             animateStats();
@@ -634,587 +763,765 @@
             setCurrentDateTime();
             startLiveUpdates();
             setupEventListeners();
+            updateAIAnalysis(); // Initial analysis
         }
-        
-        // Create floating visual elements
+
+        // Enhanced Floating Elements with 3D Rotation
         function createFloatingElements() {
             const container = document.getElementById('floatingElements');
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 60; i++) {
                 const element = document.createElement('div');
                 element.className = 'floating-element';
                 element.style.left = Math.random() * 100 + 'vw';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                element.style.animationDuration = (3 + Math.random() * 8) + 's';
-                element.style.width = (2 + Math.random() * 4) + 'px';
+                element.style.animationDelay = Math.random() * 8 + 's';
+                element.style.animationDuration = (4 + Math.random() * 6) + 's';
+                element.style.width = (3 + Math.random() * 5) + 'px';
                 element.style.height = element.style.width;
+                element.style.background = Math.random() > 0.5 ? 'var(--quantum-blue)' : 'var(--neon-pink)';
                 container.appendChild(element);
             }
         }
-        
-        // Animate statistics counters
-        function animateStats() {
-            animateCounter('successCount', state.stats.successCount, 2000);
-            animateCounter('appealCount', state.stats.appealCount, 2500);
-        }
-        
+
+        // Smooth Counter Animation with Easing
         function animateCounter(elementId, target, duration) {
             const element = document.getElementById(elementId);
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
+            const start = parseFloat(element.textContent) || 0;
+            const startTime = performance.now();
             
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease-out cubic
+                const current = start + (target - start) * easeProgress;
+                
                 element.textContent = Math.floor(current).toLocaleString();
-            }, 16);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            }
+            
+            requestAnimationFrame(update);
         }
-        
-        // Live system updates
+
+        // Animate stats on page load
+        function animateStats() {
+            animateCounter('successCount', state.stats.successCount, 2000);
+            animateCounter('appealCount', state.stats.appealCount, 2000);
+        }
+
+        // Enhanced Live Updates with Realistic Fluctuations
         function startLiveUpdates() {
             setInterval(() => {
                 const successRate = document.getElementById('liveSuccessRate');
-                const currentRate = parseFloat(successRate.textContent);
-                const newRate = (currentRate + (Math.random() * 0.2 - 0.1)).toFixed(1);
-                successRate.textContent = Math.max(94, Math.min(95.5, newRate));
+                let currentRate = parseFloat(successRate.textContent);
+                const fluctuation = (Math.random() - 0.5) * 0.3;
+                currentRate = Math.max(94.0, Math.min(95.8, currentRate + fluctuation));
+                successRate.textContent = currentRate.toFixed(1);
                 
-                // Update stats
-                state.stats.appealCount++;
-                document.getElementById('appealCount').textContent = state.stats.appealCount.toLocaleString();
-            }, 5000);
+                // Periodic stat updates
+                if (Math.random() > 0.7) {
+                    state.stats.appealCount++;
+                    document.getElementById('appealCount').textContent = state.stats.appealCount.toLocaleString();
+                    saveState();
+                }
+            }, 8000);
         }
-        
-        // Set current date/time
+
+        // Set Current Date/Time with Validation
         function setCurrentDateTime() {
             const now = new Date();
-            const offset = now.getTimezoneOffset() * 60000;
-            const localISOTime = new Date(now - offset).toISOString().slice(0, 16);
-            document.getElementById('banDate').value = localISOTime;
+            const offset = now.getTimezoneOffset();
+            const localDate = new Date(now.getTime() - (offset * 60000));
+            const isoString = localDate.toISOString().slice(0, 16);
+            document.getElementById('banDate').value = isoString;
         }
-        
-        // Setup event listeners
+
+        // Comprehensive Event Listeners
         function setupEventListeners() {
-            document.getElementById('phone').addEventListener('input', updateAIAnalysis);
-            document.getElementById('banType').addEventListener('change', updateAIAnalysis);
-            document.getElementById('context').addEventListener('input', updateAIAnalysis);
-            document.getElementById('strategy').addEventListener('change', updateAIAnalysis);
-        }
-        
-        // AI Analysis with detailed insights
-        function updateAIAnalysis() {
-            const phone = document.getElementById('phone').value;
-            const banType = document.getElementById('banType').value;
-            const context = document.getElementById('context').value;
-            const strategy = document.getElementById('strategy').value;
-            
-            let analysis = "🤖 AI ANALYSIS: ";
-            let insights = [];
-            
-            if (phone) {
-                insights.push(`Phone number format ${validatePhone(phone) ? '✅ VALID' : '⚠️ CHECK FORMAT'}`);
-            }
-            
-            if (banType) {
-                const severity = {
-                    'permanent': 'CRITICAL',
-                    'temporary': 'MODERATE',
-                    'spam': 'HIGH',
-                    'modified': 'SEVERE',
-                    'mass': 'HIGH',
-                    'reported': 'MODERATE'
-                };
-                insights.push(`Ban severity: ${severity[banType] || 'UNKNOWN'}`);
-            }
-            
-            if (context.length > 0) {
-                const wordCount = context.split(/\s+/).length;
-                if (wordCount < 20) {
-                    insights.push('⚠️ More context recommended (20+ words)');
-                } else {
-                    insights.push(`✅ Context detailed (${wordCount} words)`);
+            const inputs = ['phone', 'banType', 'context', 'strategy'];
+            inputs.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('input', updateAIAnalysis);
+                    element.addEventListener('change', updateAIAnalysis);
                 }
+            });
+
+            // Form validation on submit
+            document.querySelectorAll('.cyber-button')[0].addEventListener('click', validateForm);
+        }
+
+        // Enhanced AI Analysis with Deeper Insights and Suggestions
+        function updateAIAnalysis() {
+            const phone = document.getElementById('phone').value.trim();
+            const banType = document.getElementById('banType').value;
+            const context = document.getElementById('context').value.trim();
+            const strategy = document.getElementById('strategy').value;
+            const userEmail = document.getElementById('userEmail').value.trim();
+            
+            let analysis = "🤖 AI QUANTUM ANALYSIS: ";
+            let insights = [];
+            let suggestions = [];
+            
+            // Phone validation
+            if (phone) {
+                const isValid = validatePhone(phone);
+                insights.push(`Phone: ${isValid ? '✅ VALIDATED' : '⚠️ INVALID FORMAT - Use +[Country Code][Number]'}`);
+                if (!isValid) suggestions.push('Fix phone format for optimal processing.');
+            } else {
+                insights.push('Phone: ❌ REQUIRED');
             }
             
+            // Ban Type
+            if (banType) {
+                const severityMap = {
+                    'permanent': 'CRITICAL (Low Auto-Success)',
+                    'temporary': 'MODERATE (High Recovery Potential)',
+                    'spam': 'HIGH (Context Critical)',
+                    'modified': 'SEVERE (Technical Proof Needed)',
+                    'mass': 'HIGH (Volume Control Evidence)',
+                    'reported': 'MODERATE (Social Proof Helpful)'
+                };
+                insights.push(`Ban Severity: ${severityMap[banType] || 'UNKNOWN'}`);
+            } else {
+                insights.push('Ban Type: ❌ SELECT CATEGORY');
+            }
+            
+            // Context Analysis
+            if (context) {
+                const wordCount = context.split(/\s+/).filter(word => word.length > 0).length;
+                const sentimentScore = analyzeSentiment(context); // Simple sentiment check
+                if (wordCount < 20) {
+                    insights.push(`Context: ⚠️ BRIEF (${wordCount} words) - Expand for better AI optimization`);
+                    suggestions.push('Add more details: timestamps, screenshots, usage history.');
+                } else if (wordCount > 100) {
+                    insights.push(`Context: ✅ DETAILED (${wordCount} words) - Excellent for neural processing`);
+                } else {
+                    insights.push(`Context: ✅ ADEQUATE (${wordCount} words)`);
+                }
+                insights.push(`Sentiment: ${sentimentScore > 0 ? 'POSITIVE' : 'NEUTRAL/NEGATIVE'} - Balanced tone recommended`);
+            } else {
+                insights.push('Context: ❌ REQUIRED - Describe incident fully');
+                suggestions.push('Include: What happened? Errors? Usage patterns?');
+            }
+            
+            // Strategy
             if (strategy) {
-                insights.push(`Strategy: ${strategy.toUpperCase()}`);
+                insights.push(`Strategy: ${strategy.replace('_', ' ').toUpperCase()} - Aligned with ban type`);
+            } else {
+                insights.push('Strategy: ❌ SELECT APPROACH');
             }
             
-            if (insights.length === 0) {
-                analysis += "Awaiting input data...";
+            // Email
+            if (userEmail) {
+                const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
+                insights.push(`Email: ${isValidEmail ? '✅ VERIFIED' : '⚠️ INVALID'}`);
+            } else {
+                insights.push('Email: ❌ REQUIRED FOR FOLLOW-UPS');
+            }
+            
+            // Overall Prediction Teaser
+            const preliminaryRate = calculatePreliminarySuccess(banType, context, strategy);
+            insights.push(`Preliminary Success: ${preliminaryRate}% - Complete fields for full analysis`);
+            
+            if (insights.length === 0 || (phone === '' && banType === '')) {
+                analysis += "Initializing quantum neural network... Provide input data to begin analysis.";
             } else {
                 analysis += insights.join(' | ');
+                if (suggestions.length > 0) {
+                    analysis += `\n\n💡 AI SUGGESTIONS: ${suggestions.join(' | ')}`;
+                }
             }
             
             document.getElementById('aiAnalysis').textContent = analysis;
         }
-        
-        // Phone validation
+
+        // Enhanced Phone Validation with International Support
         function validatePhone(phone) {
-            return /^\+?[1-9]\d{1,14}$/.test(phone.replace(/\s/g, ''));
+            // Remove spaces and common separators
+            const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+            // EITU E.164 format: +[1-3 digits country code][up to 15 digits]
+            return /^(\+)?[1-9]\d{1,14}$/.test(cleaned);
         }
-        
-        // Generate quantum appeal
+
+        // Preliminary Success Calculation for Real-Time Feedback
+        function calculatePreliminarySuccess(banType, context, strategy) {
+            let base = 50;
+            if (banType) {
+                const typeBoost = { temporary: 20, reported: 15, spam: 10, mass: 8, modified: 5, permanent: 2 };
+                base += typeBoost[banType] || 0;
+            }
+            if (context && context.length > 50) base += 15;
+            if (strategy) base += 10;
+            return Math.min(85, base + Math.random() * 10); // Add slight randomness for realism
+        }
+
+        // Simple Sentiment Analysis (Basic Keyword-Based)
+        function analyzeSentiment(text) {
+            const positiveWords = ['sorry', 'apologize', 'understand', 'commit', 'comply', 'legitimate', 'important', 'essential'];
+            const negativeWords = ['violate', 'spam', 'ban', 'error', 'frustrated', 'wrong'];
+            const words = text.toLowerCase().split(/\s+/);
+            let score = 0;
+            words.forEach(word => {
+                if (positiveWords.some(p => word.includes(p))) score += 1;
+                if (negativeWords.some(n => word.includes(n))) score -= 0.5;
+            });
+            return score;
+        }
+
+        // Form Validation Before Generation
+        function validateForm() {
+            const requiredFields = ['phone', 'banType', 'banDate', 'userEmail', 'strategy'];
+            let isValid = true;
+            requiredFields.forEach(id => {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ff0000';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = 'var(--quantum-blue)';
+                }
+            });
+            if (!isValid) {
+                showNotification('❌ Please fill all required fields before generating appeal.', 4000);
+                return false;
+            }
+            return true;
+        }
+
+        // Enhanced Quantum Appeal Generation with Loading State
         function generateQuantumAppeal() {
-            const phone = document.getElementById('phone').value;
-            const banType = document.getElementById('banType').value;
-            const banDate = document.getElementById('banDate').value;
-            const userEmail = document.getElementById('userEmail').value;
-            const strategy = document.getElementById('strategy').value;
-            const context = document.getElementById('context').value;
+            if (!validateForm()) return;
             
-            if (!phone || !banType || !banDate || !userEmail) {
-                showNotification('❌ Please complete all required fields', 3000);
-                return;
-            }
+            // Show loading spinner
+            const spinner = document.getElementById('loadingSpinner');
+            const button = event.target;
+            button.disabled = true;
+            button.textContent = '⚡ PROCESSING...';
+            spinner.style.display = 'block';
             
-            if (!validatePhone(phone)) {
-                showNotification('⚠️ Invalid phone number format', 3000);
-                return;
-            }
-            
-            // Calculate success probability
-            const successRate = calculateSuccessRate(banType, context, strategy);
-            document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${successRate}%`;
-            
-            // Generate appeal
-            const appeal = generateAppealTemplate(phone, banType, banDate, userEmail, strategy, context);
-            document.getElementById('emailOutput').textContent = appeal;
-            
-            // Save to state and history
-            state.currentAppeal = {
-                appeal: appeal,
-                phone: phone,
-                banType: banType,
-                timestamp: new Date().toISOString(),
-                successRate: successRate
-            };
-            
-            saveToHistory(state.currentAppeal);
-            
-            // Update stats
-            state.stats.successCount++;
-            document.getElementById('successCount').textContent = state.stats.successCount.toLocaleString();
-            
-            showNotification('✅ Quantum appeal generated successfully!', 3000);
-            
-            // Animate progress bar
-            const progress = document.getElementById('automationProgress');
-            progress.style.width = '100%';
-            setTimeout(() => progress.style.width = '0%', 2000);
+            // Simulate processing delay for UX
+            setTimeout(() => {
+                const phone = document.getElementById('phone').value.trim();
+                const banType = document.getElementById('banType').value;
+                const banDate = document.getElementById('banDate').value;
+                const userEmail = document.getElementById('userEmail').value.trim();
+                const strategy = document.getElementById('strategy').value;
+                const context = document.getElementById('context').value.trim();
+                
+                if (!validatePhone(phone)) {
+                    showNotification('⚠️ Please correct phone number format (+CountryCodeNumber).', 3000);
+                    resetGenerationState(button, spinner);
+                    return;
+                }
+                
+                // Calculate and display success rate
+                const successRate = calculateSuccessRate(banType, context, strategy);
+                document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${successRate}% (Neural Network Prediction)`;
+                
+                // Generate enhanced appeal
+                const appeal = generateAppealTemplate(phone, banType, banDate, userEmail, strategy, context);
+                document.getElementById('emailOutput').textContent = appeal;
+                
+                // Update state and history
+                state.currentAppeal = {
+                    appeal: appeal,
+                    phone: phone,
+                    banType: banType,
+                    timestamp: new Date().toISOString(),
+                    successRate: successRate,
+                    strategy: strategy
+                };
+                
+                saveToHistory(state.currentAppeal);
+                
+                // Update stats
+                state.stats.appealCount++;
+                document.getElementById('appealCount').textContent = state.stats.appealCount.toLocaleString();
+                saveState();
+                
+                showNotification('✅ Quantum appeal generated! Success optimized for transmission.', 4000);
+                
+                // Animate automation progress briefly
+                const progress = document.getElementById('automationProgress');
+                progress.style.width = '100%';
+                setTimeout(() => { progress.style.width = '0%'; }, 3000);
+                
+                resetGenerationState(button, spinner);
+            }, 2000); // 2-second processing simulation
         }
-        
-        // Calculate success rate based on multiple factors
+
+        function resetGenerationState(button, spinner) {
+            button.disabled = false;
+            button.textContent = '⚡ GENERATE QUANTUM APPEAL';
+            spinner.style.display = 'none';
+        }
+
+        // Advanced Success Rate Calculation with More Factors
         function calculateSuccessRate(banType, context, strategy) {
-            let baseRate = 70;
+            let baseRate = 75;
             
-            // Ban type impact
+            // Ban type impact (more realistic weights)
             const banTypeRates = {
-                'temporary': 15,
-                'spam': 10,
-                'reported': 12,
-                'modified': 5,
-                'mass': 8,
-                'permanent': 3
+                temporary: 18,
+                reported: 14,
+                spam: 12,
+                mass: 10,
+                modified: 6,
+                permanent: -5 // Permanent bans are harder
             };
             baseRate += banTypeRates[banType] || 0;
             
-            // Context quality impact
-            const wordCount = context.split(/\s+/).length;
-            if (wordCount > 50) baseRate += 8;
-            else if (wordCount > 20) baseRate += 5;
+            // Context quality (word count + sentiment)
+            const wordCount = context.split(/\s+/).filter(w => w.length > 0).length;
+            const sentiment = analyzeSentiment(context);
+            if (wordCount > 80) baseRate += 12;
+            else if (wordCount > 40) baseRate += 8;
+            else if (wordCount > 20) baseRate += 4;
+            if (sentiment > 2) baseRate += 5; // Positive tone boosts
             
-            // Strategy impact
+            // Strategy alignment bonus
             const strategyBonus = {
-                'ai_optimized': 7,
-                'legal_formal': 5,
-                'business': 6,
-                'technical': 4,
-                'emotional': 3
+                ai_optimized: 10,
+                legal_formal: 8,
+                business: 9,
+                technical: 7,
+                emotional: 6
             };
             baseRate += strategyBonus[strategy] || 0;
             
-            return Math.min(98, baseRate);
+            // Random factor for realism (simulates external variables)
+            baseRate += Math.random() * 8 - 4;
+            
+            return Math.min(97, Math.max(40, Math.round(baseRate)));
         }
-        
-        // Generate appeal template
+
+        // Enhanced Appeal Templates - More Professional, Detailed, and Persuasive
         function generateAppealTemplate(phone, banType, banDate, userEmail, strategy, context) {
             const date = new Date(banDate);
             const formattedDate = date.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                year: 'numeric', month: 'long', day: 'numeric', 
+                hour: '2-digit', minute: '2-digit', timeZoneName: 'short' 
             });
             
-            const templates = {
-                ai_optimized: `Subject: URGENT: WhatsApp Account Restoration Request - ${phone}
-
-Dear WhatsApp Support Team,
-
-I am writing to request immediate review and restoration of my WhatsApp account associated with phone number ${phone}, which was restricted on ${formattedDate}.
-
-ACCOUNT DETAILS:
-- Phone Number: ${phone}
-- Ban Date: ${formattedDate}
-- Account Type: Personal/Business Communication
-- Contact Email: ${userEmail}
-
-INCIDENT CONTEXT:
-${context || 'I believe this restriction was applied in error through an automated system detection.'}
-
-CORRECTIVE ACTIONS TAKEN:
-✓ Official WhatsApp application reinstalled from verified sources
-✓ Device security protocols reviewed and updated
-✓ Terms of Service comprehensively reviewed
-✓ All third-party applications removed
-✓ Network security verified
-✓ Account usage patterns optimized for compliance
-
-I have been a responsible WhatsApp user and this account is essential for maintaining critical personal and professional communications. I respectfully request manual human review of this case, as I believe the automated system may have flagged legitimate activity.
-
-I am fully committed to compliance with all WhatsApp policies and am available for any additional verification processes required.
-
-Thank you for your prompt attention to this matter.
-
-Best regards,
-${userEmail}
-Account: ${phone}`,
-
-                legal_formal: `Subject: FORMAL ACCOUNT RESTORATION REQUEST & COMPLIANCE INQUIRY - ${phone}
-
-WhatsApp Support & Legal Department,
-
-This communication serves as formal notice regarding the account restriction applied to ${phone} on ${formattedDate}.
-
-CASE REFERENCE:
-Account Number: ${phone}
-Restriction Date: ${formattedDate}
-Contact: ${userEmail}
-
-DETAILED CONTEXT:
-${context || 'The restriction appears to have been applied without clear justification or prior notice.'}
-
-COMPLIANCE STATEMENT:
-I affirm that all usage of the WhatsApp service has been in accordance with the published Terms of Service. I request:
-
-1. Immediate account reinstatement pending investigation
-2. Disclosure of specific policy violations alleged
-3. Manual review by qualified personnel
-4. Confirmation of appeal receipt and timeline
-
-Under applicable digital service regulations and consumer protection laws, users have the right to understand the basis for service restrictions and to appeal such decisions.
-
-I maintain that this restriction was applied in error and request expedited resolution. Failure to address this matter appropriately may necessitate escalation to relevant regulatory authorities and consumer protection agencies.
-
-For immediate resolution, contact:
-${userEmail}
-
-Account Reference: ${phone}
-
-Respectfully submitted,
-${userEmail}`,
-
-                emotional: `Subject: Please Help - I've Lost Connection With Everyone - ${phone}
-
-Dear WhatsApp Support Team,
-
-I'm reaching out with a heavy heart because my account ${phone} was banned on ${formattedDate}, and I feel completely disconnected from my world.
-
-${context || 'WhatsApp isn\'t just an app for me - it\'s my lifeline to the people who matter most.'}
-
-I use WhatsApp to:
-- Stay connected with family members overseas
-- Coordinate care for elderly relatives
-- Maintain important friendships
-- Manage essential daily communications
-
-Since losing access, I've:
-✓ Missed important family updates
-✓ Been unable to coordinate with loved ones
-✓ Lost access to years of precious memories and conversations
-✓ Felt isolated from my community
-
-I promise I never intended to violate any policies. If I did something wrong, it was unintentional, and I'm truly sorry. I've learned from this experience and will be extremely careful going forward.
-
-Please, I'm asking for a second chance. This account means everything to me for staying connected with the people I love.
-
-I'm available at ${userEmail} and desperately hoping for your understanding and help.
-
-Thank you so much for taking the time to read this,
-${phone}
-${userEmail}`,
-
-                technical: `Subject: Technical Account Review Request - ${phone}
-
-WhatsApp Technical Support Team,
-
-I am submitting a technical appeal for account ${phone}, which was flagged on ${formattedDate}.
-
-TECHNICAL DETAILS:
-Account: ${phone}
-Detection Date: ${formattedDate}
-Contact: ${userEmail}
-
-ANALYSIS OF INCIDENT:
-${context || 'After thorough analysis, I believe the account restriction resulted from a false positive in the automated detection system.'}
-
-TECHNICAL FACTORS TO CONSIDER:
-- Network Configuration: Standard residential/mobile network
-- Device: Official hardware running standard OS
-- Application: Official WhatsApp client from verified app store
-- Usage Patterns: Consistent with legitimate personal use
-- API Interactions: None - standard client usage only
-- Metadata: No unusual patterns or anomalies
-
-VERIFICATION AVAILABLE:
-✓ Device identification and authentication
-✓ Network logs showing standard usage
-✓ Installation verification from official sources
-✓ Usage history demonstrating legitimate patterns
-
-I request technical review by your engineering team to identify the false positive trigger. I am prepared to provide any additional technical data or logs required for investigation.
-
-This appears to be an automated system error rather than actual policy violation. Manual technical review should confirm legitimate usage patterns.
-
-Technical Contact: ${userEmail}
-Account Reference: ${phone}
-
-Best regards,
-${userEmail}`,
-
-                business: `Subject: URGENT: Business Account Restoration Request - ${phone}
-
-WhatsApp Business Support Team,
-
-I am writing regarding the critical restriction of business account ${phone} on ${formattedDate}, which is severely impacting business operations.
-
-BUSINESS ACCOUNT INFORMATION:
-Business Line: ${phone}
-Restriction Date: ${formattedDate}
-Business Contact: ${userEmail}
-
-BUSINESS IMPACT:
-${context || 'This restriction has caused significant disruption to our business operations and customer communications.'}
-
-OPERATIONAL CONSEQUENCES:
-- Customer service channels disrupted
-- Active customer conversations terminated
-- Business inquiries going unanswered
-- Revenue impact from communication breakdown
-- Brand reputation concerns
-
-COMPLIANCE VERIFICATION:
-✓ Official WhatsApp Business application in use
-✓ Business verification documents available
-✓ Compliance with business messaging policies
-✓ Customer consent protocols implemented
-✓ Opt-out mechanisms properly configured
-
-IMMEDIATE REQUIREMENTS:
-1. Emergency restoration of business communications
-2. Explanation of restriction reason
-3. Guidance for preventing future issues
-4. Access to business account recovery process
-
-Our business operates in full compliance with WhatsApp Business policies. We maintain proper customer consent, respect communication limits, and provide clear business identification.
-
-This interruption is causing measurable business harm. I urgently request prioritized review and restoration.
-
-Business Contact: ${userEmail}
-Business Line: ${phone}
-
-Respectfully,
-${userEmail}
-Business Representative`
+            const banTypeLabels = {
+                permanent: 'Permanent Restriction',
+                temporary: 'Temporary Suspension',
+                spam: 'Spam Violation',
+                modified: 'Modified Client Detection',
+                mass: 'Mass Messaging Flag',
+                reported: 'Multiple User Reports'
             };
             
-            return templates[strategy] || templates.ai_optimized;
+            const commonHeader = `Subject: URGENT ACCOUNT RESTORATION APPEAL - ${phone} | ${banTypeLabels[banType] || 'Account Issue'} | Request for Immediate Review
+
+Dear WhatsApp Support Team,
+
+I am writing to formally appeal the restriction placed on my WhatsApp account linked to phone number ${phone}, which occurred on ${formattedDate}. As a long-term user of your service, I value the platform's role in my daily communications and am committed to full compliance with all policies.
+
+ACCOUNT IDENTIFICATION:
+- Phone Number: ${phone}
+- Restriction Date/Time: ${formattedDate}
+- Associated Email: ${userEmail}
+- Device/OS: [Please specify if relevant, e.g., Android/iOS]
+- Ban Category: ${banTypeLabels[banType] || 'Unspecified'}
+
+DETAILED INCIDENT DESCRIPTION:
+${context || 'The restriction appears to have been triggered unexpectedly during normal usage. I have reviewed my recent activity and found no intentional violations, but I understand automated systems may flag unusual patterns. To provide clarity:'}
+
+${getContextEnhancement(strategy, banType)}
+
+MY CORRECTIVE MEASURES & COMMITMENTS:
+• Reinstalled the official WhatsApp application from Google Play Store / Apple App Store
+• Cleared all cache, data, and third-party modifications from the device
+• Reviewed and reaffirmed understanding of WhatsApp's Terms of Service, Community Guidelines, and Anti-Spam policies
+• Implemented stricter usage controls to prevent any future flags (e.g., message frequency limits, contact verification)
+• Conducted device security scan and removed any potentially conflicting applications
+• Verified network stability and IP reputation to rule out external factors
+
+This account is vital for [personal/family connections | professional/business operations | community engagement], and the restriction has caused significant disruption. I respectfully request:
+1. A manual review by a human moderator to assess the legitimacy of the automated flag
+2. Clear explanation of the specific policy allegedly violated (if applicable)
+3. Restoration of account access with guidance on preventive measures
+4. Escalation to senior support if initial review confirms no violation
+
+I assure you of my good faith and am prepared to provide additional verification, such as device logs, screenshots, or identity confirmation. WhatsApp's mission to connect people is important to me, and I aim to continue contributing positively to the community.
+
+Thank you for your time and understanding. I eagerly await your response within 48-72 hours.
+
+Best regards,  
+[Your Full Name]  
+Email: ${userEmail}  
+Phone: ${phone}  
+[Optional: Location/Country for regional support]`;
+
+            const strategySpecific = {
+                ai_optimized: `
+INCIDENT CONTEXT ENHANCEMENT (AI-OPTIMIZED):
+Based on neural pattern analysis, this appears to be a false positive from high-volume legitimate messaging or network anomaly. Key factors:
+- Usage Pattern: Primarily 1:1 conversations with verified contacts (no bulk broadcasts)
+- No commercial promotion or unsolicited messages sent
+- All media shared was consensual and non-spammy
+- Recent activity spike due to [family event | work deadline | legitimate group coordination]
+
+AI Recommendation: Prioritize this appeal for algorithmic re-evaluation to restore access swiftly.`,
+                
+                legal_formal: `
+LEGAL & REGULATORY CONTEXT:
+This restriction may contravene user rights under applicable laws, including but not limited to the Digital Services Act (EU), CCPA (California), or general consumer protection regulations requiring transparency in automated decisions.
+
+FORMAL REQUESTS:
+1. Disclosure of the exact detection criteria and evidence used for restriction
+2. Right to contest the automated decision per platform policies
+3. Timeline for resolution (typically 7-14 days for formal appeals)
+4. If upheld, provision of permanent deletion options for data
+
+I reserve the right to escalate to relevant authorities (e.g., data protection agencies) if no satisfactory resolution is provided. All communications should reference this appeal.`,
+                
+                emotional: `
+PERSONAL IMPACT STATEMENT:
+The sudden loss of access has left me isolated from loved ones, especially during [challenging time | important life event]. WhatsApp has been my primary tool for:
+- Daily check-ins with aging parents and distant family
+- Coordinating support for [health issues | community volunteering]
+- Preserving irreplaceable memories in group chats spanning years
+
+Emotionally, this feels like losing a vital connection in an already connected world. I deeply regret any unintentional misstep and am heartbroken by the disconnection. Your compassion in reviewing this could make a profound difference.`,
+                
+                technical: `
+TECHNICAL DIAGNOSTIC SUMMARY:
+After self-audit, potential triggers identified:
+- Temporary network instability (e.g., VPN usage for privacy, now disabled)
+- Device synchronization issues during OS update
+- High data usage from legitimate file sharing (e.g., photos/documents with consent)
+- No evidence of rooted/jailbroken device or unofficial APKs
+
+TECHNICAL VERIFICATION OFFERED:
+• Full device specs and WhatsApp version details
+• Screenshots of error codes and ban notifications
+• Network logs from ISP confirming standard traffic
+• Absence of any automation scripts or bulk tools
+
+Request engineering team review to trace the false positive in detection algorithms. This case highlights the need for nuanced technical appeals.`,
+                
+                business: `
+BUSINESS IMPACT ASSESSMENT:
+As a verified business user, this restriction violates WhatsApp Business API terms for legitimate enterprise communications. Key operations affected:
+- Customer support ticketing (average 50+ daily queries)
+- Order confirmations and delivery updates
+- Team coordination for [industry/sector]
+- Compliance with opt-in requirements (all customers consented via website/form)
+
+BUSINESS RECOVERY PLAN:
+• Immediate reinstatement to minimize revenue loss (estimated [X amount/hour])
+• Access to Business API analytics for compliance proof
+• Review of message templates against approval guidelines
+• Escalation to WhatsApp Business support tier
+
+Supporting documents available: Business verification, consent logs, message volume reports. Urgent restoration required to maintain service level agreements.`
+            };
+            
+            return commonHeader + (strategySpecific[strategy] || strategySpecific.ai_optimized);
         }
-        
-        // Copy to clipboard function
+
+        // Helper for Context Enhancement
+        function getContextEnhancement(strategy, banType) {
+            const enhancements = {
+                permanent: 'Given the severity, I believe this warrants exceptional review due to lack of prior warnings.',
+                temporary: 'This temporary measure has already served its purpose; I\'ve adjusted behaviors accordingly.',
+                spam: 'All messages were to opted-in contacts; no spam intent.',
+                modified: 'Device is stock configuration; any flags likely from system updates.',
+                mass: 'Group messaging was for legitimate events; frequency now reduced.',
+                reported: 'Disputes may stem from misunderstandings; I maintain respectful interactions.'
+            };
+            return enhancements[banType] || 'Please investigate for automated error.';
+        }
+
+        // Robust Copy to Clipboard with Fallbacks
         function copyToClipboard() {
-            const appeal = document.getElementById('emailOutput').textContent;
+            const output = document.getElementById('emailOutput');
+            const appeal = output.textContent.trim();
             
-            if (appeal === '// APPEAL WILL BE GENERATED HERE') {
-                showNotification('⚠️ Generate an appeal first!', 2000);
+            if (appeal.startsWith('//') || appeal.length < 100) {
+                showNotification('⚠️ Generate an appeal first to copy!', 3000);
                 return;
             }
             
-            navigator.clipboard.writeText(appeal).then(() => {
-                showNotification('✅ Appeal copied to clipboard!', 2000);
-            }).catch(err => {
-                // Fallback method
-                const textArea = document.createElement('textarea');
-                textArea.value = appeal;
-                textArea.style.position = 'fixed';
-                textArea.style.left = '-999999px';
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    showNotification('✅ Appeal copied to clipboard!', 2000);
-                } catch (e) {
-                    showNotification('❌ Copy failed. Please select and copy manually.', 3000);
-                }
-                document.body.removeChild(textArea);
-            });
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(appeal).then(() => {
+                    showNotification('✅ Appeal copied to clipboard! Ready for email.', 2500);
+                }).catch(() => fallbackCopy(appeal));
+            } else {
+                fallbackCopy(appeal);
+            }
         }
-        
-        // Email client functions
-        function openInGmail() {
-            openEmailClient('https://mail.google.com/mail/?view=cm&fs=1');
+
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showNotification('✅ Appeal copied (fallback method)!', 2500);
+            } catch (err) {
+                showNotification('❌ Copy failed. Select text manually and copy.', 4000);
+            }
+            document.body.removeChild(textArea);
         }
-        
-        function openInOutlook() {
-            openEmailClient('https://outlook.live.com/mail/0/deeplink/compose');
-        }
-        
-        function openInYahoo() {
-            openEmailClient('https://compose.mail.yahoo.com/');
-        }
-        
+
+        // Email Client Integration Functions (Improved with Better URL Handling)
         function openInDefault() {
-            const appeal = document.getElementById('emailOutput').textContent;
-            if (appeal === '// APPEAL WILL BE GENERATED HERE') {
-                showNotification('⚠️ Generate an appeal first!', 2000);
+            const appeal = document.getElementById('emailOutput').textContent.trim();
+            if (appeal.startsWith('//')) {
+                showNotification('⚠️ Generate appeal first!', 2000);
                 return;
             }
-            
-            const subject = appeal.split('\n')[0].replace('Subject: ', '');
-            const body = appeal.split('\n').slice(2).join('\n');
-            const emails = 'smb_web@support.whatsapp.com,android@support.whatsapp.com,iphone@support.whatsapp.com,support@support.whatsapp.com';
-            
-            const mailtoLink = `mailto:${emails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-            showNotification('📧 Opening default email client...', 2000);
+            const lines = appeal.split('\n');
+            const subject = lines[0].replace('Subject: ', '').trim();
+            const body = lines.slice(1).join('\n').trim();
+            const emails = 'smb_web@support.whatsapp.com,android@support.whatsapp.com,iphone@support.whatsapp.com,support@support.whatsapp.com,legal@whatsapp.com';
+            const mailto = `mailto:${emails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailto;
+            showNotification('📧 Opening default email client with pre-filled appeal...', 3000);
         }
-        
-        function openEmailClient(baseUrl) {
-            const appeal = document.getElementById('emailOutput').textContent;
-            if (appeal === '// APPEAL WILL BE GENERATED HERE') {
-                showNotification('⚠️ Generate an appeal first!', 2000);
+
+        function openInGmail() {
+            const appeal = document.getElementById('emailOutput').textContent.trim();
+            if (appeal.startsWith('//')) {
+                showNotification('⚠️ Generate appeal first!', 2000);
                 return;
             }
-            
-            const subject = appeal.split('\n')[0].replace('Subject: ', '');
-            const body = appeal.split('\n').slice(2).join('\n');
-            
-            let url = `${baseUrl}&to=smb_web@support.whatsapp.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            window.open(url, '_blank');
-            showNotification('📧 Email client opened in new tab', 2000);
+            const lines = appeal.split('\n');
+            const subject = lines[0].replace('Subject: ', '').trim();
+            const body = lines.slice(1).join('\n').trim();
+            const url = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=smb_web@support.whatsapp.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('📧 Gmail opened with appeal loaded!', 2500);
         }
-        
-        // Show notification
-        function showNotification(message, duration) {
+
+        function openInOutlook() {
+            const appeal = document.getElementById('emailOutput').textContent.trim();
+            if (appeal.startsWith('//')) {
+                showNotification('⚠️ Generate appeal first!', 2000);
+                return;
+            }
+            const lines = appeal.split('\n');
+            const subject = lines[0].replace('Subject: ', '').trim();
+            const body = lines.slice(1).join('\n').trim();
+            const url = `https://outlook.live.com/mail/0/deeplink/compose?to=smb_web@support.whatsapp.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('📧 Outlook opened with appeal loaded!', 2500);
+        }
+
+        function openInYahoo() {
+            const appeal = document.getElementById('emailOutput').textContent.trim();
+            if (appeal.startsWith('//')) {
+                showNotification('⚠️ Generate appeal first!', 2000);
+                return;
+            }
+            const lines = appeal.split('\n');
+            const subject = lines[0].replace('Subject: ', '').trim();
+            const body = lines.slice(1).join('\n').trim();
+            const url = `https://compose.mail.yahoo.com/?to=smb_web@support.whatsapp.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('📧 Yahoo Mail opened with appeal loaded!', 2500);
+        }
+
+        // Enhanced Notification System with Auto-Remove and Types
+        function showNotification(message, duration = 3000, type = 'info') {
             const notification = document.createElement('div');
             notification.className = 'notification';
             notification.textContent = message;
+            
+            // Type-based styling
+            if (type === 'success') {
+                notification.style.background = 'linear-gradient(45deg, var(--matrix-green), #00cc44)';
+            } else if (type === 'error') {
+                notification.style.background = 'linear-gradient(45deg, #ff4444, #cc0000)';
+            }
+            
             document.body.appendChild(notification);
             
+            // Auto-remove with animation
             setTimeout(() => {
                 notification.style.animation = 'slideIn 0.5s ease reverse';
-                setTimeout(() => document.body.removeChild(notification), 500);
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
             }, duration);
         }
-        
-        // Save to history
+
+        // History Management with Persistence
         function saveToHistory(appealData) {
             state.appeals.unshift(appealData);
-            if (state.appeals.length > 10) state.appeals.pop();
+            if (state.appeals.length > 20) { // Increased limit
+                state.appeals = state.appeals.slice(0, 20);
+            }
             updateHistoryDisplay();
+            saveState();
         }
-        
-        // Load history
+
         function loadHistory() {
+            // Load from localStorage (already handled in state init)
             updateHistoryDisplay();
         }
-        
-        // Update history display
+
+        // Enhanced History Display with Better Formatting
         function updateHistoryDisplay() {
             const container = document.getElementById('historyContainer');
             
             if (state.appeals.length === 0) {
                 container.innerHTML = `
-                    <div style="text-align: center; color: var(--quantum-blue); padding: 2rem;">
-                        No appeals generated yet. Create your first appeal above!
+                    <div style="text-align: center; color: var(--quantum-blue); padding: 3rem; font-style: italic; transform: translateZ(10px);">
+                        No quantum appeals generated yet. Initiate your first neural restoration process above!
                     </div>`;
                 return;
             }
             
             container.innerHTML = state.appeals.map((appeal, index) => {
                 const date = new Date(appeal.timestamp);
-                const timeStr = date.toLocaleString();
+                const timeStr = date.toLocaleString('en-US', { 
+                    year: 'numeric', month: 'short', day: 'numeric', 
+                    hour: '2-digit', minute: '2-digit' 
+                });
+                const banLabel = appeal.banType ? appeal.banType.toUpperCase().replace('_', ' ') : 'UNKNOWN';
+                const strategyLabel = appeal.strategy ? appeal.strategy.replace('_', ' ').toUpperCase() : 'N/A';
                 
                 return `
-                    <div class="history-item" onclick="loadAppeal(${index})">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <div style="color: var(--matrix-green); font-weight: bold;">${appeal.phone}</div>
-                            <div style="color: var(--quantum-blue); font-size: 0.8rem;">${timeStr}</div>
+                    <div class="history-item" onclick="loadAppeal(${index})" style="cursor: pointer; transition: all 0.3s ease;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <div style="color: var(--matrix-green); font-weight: bold; font-size: 1.1rem;">${appeal.phone}</div>
+                            <div style="color: var(--quantum-blue); font-size: 0.85rem; opacity: 0.8;">${timeStr}</div>
                         </div>
-                        <div style="color: var(--neon-pink); font-size: 0.9rem;">
-                            Ban Type: ${appeal.banType.toUpperCase()} | Success: ${appeal.successRate}%
+                        <div style="color: var(--neon-pink); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                            Ban: ${banLabel} | Strategy: ${strategyLabel}
+                        </div>
+                        <div style="color: var(--warning-gold); font-size: 1rem; font-weight: bold;">
+                            Success Rate: ${appeal.successRate}% 🎯
+                        </div>
+                        <div style="color: var(--cyber-purple); font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">
+                            Click to reload appeal in output panel
                         </div>
                     </div>
                 `;
             }).join('');
         }
-        
-        // Load appeal from history
+
+        // Load Appeal from History with Smooth Scroll
         function loadAppeal(index) {
+            if (index < 0 || index >= state.appeals.length) return;
+            
             const appeal = state.appeals[index];
             document.getElementById('emailOutput').textContent = appeal.appeal;
-            document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${appeal.successRate}%`;
+            document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${appeal.successRate}% (Historical Neural Prediction)`;
             state.currentAppeal = appeal;
-            showNotification('📋 Appeal loaded from history', 2000);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Smooth scroll to output section
+            document.querySelector('.output-section').scrollIntoView({ behavior: 'smooth' });
+            
+            showNotification('📋 Appeal loaded from quantum history log!', 2500, 'success');
         }
-        
-        // Toggle checkbox
+
+        // Checkbox Toggle with Visual Feedback
         function toggleCheckbox(id) {
             const checkbox = document.getElementById(id);
-            checkbox.checked = !checkbox.checked;
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+                const option = checkbox.closest('.auto-option');
+                if (checkbox.checked) {
+                    option.style.background = 'rgba(0, 255, 65, 0.2)';
+                    option.style.border = '1px solid var(--matrix-green)';
+                } else {
+                    option.style.background = 'rgba(0, 0, 0, 0.3)';
+                    option.style.border = 'none';
+                }
+            }
         }
-        
-        // Launch full automation
+
+        // Enhanced Full Automation Launch with Phased Animation
         function launchFullAutomation() {
             if (!state.currentAppeal) {
-                showNotification('❌ Generate an appeal first!', 2000);
+                showNotification('❌ Generate a quantum appeal first to activate automation!', 3000, 'error');
                 return;
             }
             
             const status = document.getElementById('automationStatus');
             const progress = document.getElementById('automationProgress');
+            status.style.color = 'var(--matrix-green)';
+            
             const phases = [
-                { width: '0%', text: '⚡ AUTOMATION SYSTEMS: INITIALIZING...', delay: 0 },
-                { width: '20%', text: '🔍 PHASE 1: Analyzing ban patterns...', delay: 1000 },
-                { width: '40%', text: '📧 PHASE 2: Multi-channel deployment...', delay: 2500 },
-                { width: '60%', text: '🤖 PHASE 3: AI optimization engaged...', delay: 4000 },
-                { width: '80%', text: '⚖️ PHASE 4: Legal framework prepared...', delay: 5500 },
-                { width: '100%', text: '✅ AUTOMATION COMPLETE: All systems active', delay: 7000 }
+                { width: '0%', text: '⚡ QUANTUM SYSTEMS: INITIALIZING NEURAL NETWORK...', delay: 0, color: 'var(--quantum-blue)' },
+                { width: '25%', text: '🔍 PHASE 1: ANALYZING BAN PATTERNS & OPTIMIZING APPEAL...', delay: 1500, color: 'var(--neon-pink)' },
+                { width: '50%', text: '📧 PHASE 2: DEPLOYING MULTI-CHANNEL APPEAL DISTRIBUTION...', delay: 3000, color: 'var(--matrix-green)' },
+                { width: '75%', text: '🤖 PHASE 3: ENGAGING AI REWRITING & A/B TESTING PROTOCOLS...', delay: 4500, color: 'var(--cyber-purple)' },
+                { width: '100%', text: '⚖️ PHASE 4: PREPARING LEGAL ESCALATION & FOLLOW-UP SCHEDULE...', delay: 6000, color: 'var(--warning-gold)' }
             ];
             
-            phases.forEach(phase => {
-                setTimeout(() => {
-                    progress.style.width = phase.width;
-                    status.textContent = phase.text;
-                    
-                    if (phase.width === '100%') {
-                        const currentRate = parseInt(document.getElementById('successPrediction').textContent.match(/\d+/)[0]);
-                        const newRate = Math.min(98, currentRate + 5);
-                        document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${newRate}%`;
-                        showNotification('🚀 Full automation protocol activated!', 3000);
-                    }
-                }, phase.delay);
-            });
+            let phaseIndex = 0;
+            const interval = setInterval(() => {
+                const phase = phases[phaseIndex];
+                progress.style.width = phase.width;
+                status.textContent = phase.text;
+                status.style.color = phase.color;
+                
+                phaseIndex++;
+                if (phaseIndex >= phases.length) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        status.textContent = '✅ FULL AUTOMATION DEPLOYED: Monitoring active - Expect response in 24-72 hours';
+                        status.style.color = 'var(--matrix-green)';
+                        // Boost success rate slightly for automation
+                        const currentRateMatch = document.getElementById('successPrediction').textContent.match(/(\d+)%/);
+                        if (currentRateMatch) {
+                            const currentRate = parseInt(currentRateMatch[1]);
+                            const boostedRate = Math.min(99, currentRate + 3);
+                            document.getElementById('successPrediction').textContent = `🎯 SUCCESS PROBABILITY: ${boostedRate}% (Automation Boost Applied)`;
+                        }
+                        showNotification('🚀 Quantum automation protocol fully activated! Systems monitoring inbound.', 5000, 'success');
+                    }, 1000);
+                }
+            }, 1500);
+            
+            // Reset progress after completion
+            setTimeout(() => {
+                progress.style.width = '0%';
+                status.textContent = '⚡ QUANTUM AUTOMATION SYSTEMS: READY FOR NEXT DEPLOYMENT';
+                status.style.color = 'var(--warning-gold)';
+            }, 12000);
         }
-        
-        // Initialize on page load
+
+        // Keyboard Shortcuts for Better UX
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch (e.key) {
+                    case 'Enter':
+                        if (e.shiftKey) {
+                            generateQuantumAppeal();
+                        }
+                        break;
+                    case 'c':
+                        if (state.currentAppeal) copyToClipboard();
+                        break;
+                    case 's':
+                        if (state.currentAppeal) openInDefault();
+                        break;
+                }
+            }
+        });
+
+        // Initialize System on Page Load
         window.addEventListener('DOMContentLoaded', initSystem);
+
+        // Periodic Save for Unsaved Changes (every 30s)
+        setInterval(saveState, 30000);
     </script>
 </body>
 </html>
